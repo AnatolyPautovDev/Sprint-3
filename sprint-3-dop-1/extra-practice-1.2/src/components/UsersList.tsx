@@ -1,0 +1,16 @@
+import {UserType} from 'types';
+import {FC, memo} from 'react';
+import {User} from "./User.tsx";
+
+
+type PropsType = {
+  users: UserType[];
+};
+
+export const UsersList: FC<PropsType> = memo(({users}) => {
+  return (
+    <>
+      {users.map(({id, name}) => <User key={id} id={id} name={name} />)}
+    </>
+  );
+});
